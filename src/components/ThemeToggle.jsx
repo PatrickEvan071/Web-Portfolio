@@ -5,9 +5,12 @@ import {cn} from "../lib/utils";
 export const ThemeToggle = () => {
     const [isDarkMode, setIsDarkMode] = useState(() => {
         const storedTheme = localStorage.getItem("theme");
+
+        const shouldBeDark = storedTheme === "dark" || storedTheme === null;
         
-        if (storedTheme === "dark") {
+        if (shouldBeDark) {
             document.documentElement.classList.add("dark");
+            if (!storedTheme) localStorage.setItem("theme", "dark"); 
             return true;
         } else {
             document.documentElement.classList.remove("dark");

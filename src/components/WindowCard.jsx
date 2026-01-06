@@ -45,7 +45,7 @@ export const WindowCard = ({
           )}
         </div>
 
-        <div className="flex flex-col p-6 text-foreground bg-white dark:bg-card min-h-[400px]">
+        <div className="flex flex-col p-6 text-foreground bg-card min-h-[400px]">
             {children}
         </div>
       </div>
