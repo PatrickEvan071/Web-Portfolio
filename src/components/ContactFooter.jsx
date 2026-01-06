@@ -32,7 +32,7 @@ export const ContactFooter = () => {
               href={social.href} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-foreground hover:text-[#98baefff] transition-colors duration-200 flex items-center gap-2 group"
+              className="text-foreground transition-colors duration-200 flex items-center gap-2 group"
             >
               <social.icon size={20} className="group-hover:scale-110 transition-transform" />
               <span className="text-xs font-bold uppercase tracking-widest font-roboto whitespace-nowrap">

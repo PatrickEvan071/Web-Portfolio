@@ -1,4 +1,4 @@
-    import { useRef } from 'react'; // 1. Import useRef
+import { useRef } from 'react';
 import Draggable from 'react-draggable';
 import { cn } from "../lib/utils";
 
@@ -6,29 +6,21 @@ export const WindowCard = ({
     title, 
     children, 
     className, 
-    startPos,
+    onClose, // Pass this from Home
     isDraggable = true,
-    isClosable = true, }) => {
+    isClosable = true, 
+    style // Pass zIndex from Home
+}) => {
   const nodeRef = useRef(null);
 
-  const centerPos = {
-    x: typeof window !== 'undefined' ? window.innerWidth / 2 - 336 : 0,
-    y: typeof window !== 'undefined' ? window.innerHeight / 2 - 250 : 0
-  };
-
-  return (
-    <Draggable 
-        nodeRef={nodeRef} 
-        handle=".window-header" 
-        bounds="parent" 
-        defaultPosition={startPos || centerPos}
-        disabled={!isDraggable}
-    >
-      <div 
+  const content = (
+    <div 
         ref={nodeRef} 
+        style={style}
         className={cn(
-          "fixed z-50 w-full max-w-2xl overflow-hidden rounded-xl border-3 border-window-outline bg-card shadow-2xl",
+          "w-full max-w-2xl overflow-hidden rounded-xl border-3 border-window-outline bg-card shadow-2xl",
           "font-roboto",
+          isDraggable ? "fixed" : "relative", 
           className
         )}
       >
@@ -39,9 +31,12 @@ export const WindowCard = ({
         )}>
           <span className="text-med font-medium">{title}</span>
           {isClosable && (
-            <div className="flex gap-2 text-sm transition-transform duration-200 hover:scale-120 cursor-pointer">
+            <button 
+              onClick={onClose}
+              className="flex gap-2 text-sm transition-transform duration-200 hover:scale-120 cursor-pointer outline-none"
+            >
               <span className="font-bold">[x]</span>
-            </div>
+            </button>
           )}
         </div>
 
@@ -49,6 +44,18 @@ export const WindowCard = ({
             {children}
         </div>
       </div>
+  );
+
+  if (!isDraggable) return content;
+
+  return (
+    <Draggable 
+        nodeRef={nodeRef} 
+        handle=".window-header" 
+        bounds="parent"
+        defaultPosition={{x: 50, y: 50}} 
+    >
+      {content}
     </Draggable>
   );
 };
