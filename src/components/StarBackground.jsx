@@ -1,12 +1,11 @@
 import {useState, useEffect} from 'react';
+import Wave from 'react-wavify'
 
 export const StarBackground = () => {
     const [stars, setStars] = useState([]);
-    const [meteors, setMeteors] = useState([]);
-
+    
     useEffect(() => {
         generateStars();
-        // generateMeteors();
 
         const handleResize = () => {
             generateStars();
@@ -36,24 +35,6 @@ export const StarBackground = () => {
         setStars(newStars);
     }
 
-    // const generateMeteors = () => {
-    //     const numberOfMeteors = 4
-    //     const newMeteors = []
-
-    //     for (let i = 0; i < numberOfMeteors; i++){
-    //         newMeteors.push({
-    //             id:i,
-    //             size: Math.random() * 2 + 1,
-    //             x: Math.random() * 100,
-    //             y: Math.random() * 20,
-    //             delay: Math.random() * 15,
-    //             animationDuration: Math.random() * 3 + 3,
-    //         })
-    //     }
-
-    //     setMeteors(newMeteors);
-    // }
-
     return <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
         {stars.map((star) => (
             <div 
@@ -70,19 +51,25 @@ export const StarBackground = () => {
             />
         ))}
 
-        {/* {meteors.map((meteor) => (
-            <div 
-                key = {meteor.id} 
-                className = "meteor animate-meteor" 
-                style = {{
-                    width: meteor.size * 50 + "px",
-                    height: meteor.size + "px",
-                    left: meteor.x + "%",
-                    top: meteor.y + "%",
-                    delay: meteor.delay,
-                    animationDuration: meteor.animationDuration + "s",
+        <div className="absolute bottom-0 w-full h-[300px]"> 
+            <Wave 
+                fill="url(#wave-gradient)"
+                paused={false}
+                className="h-full"
+                options={{
+                    height: 20,
+                    amplitude: 20,
+                    speed: 0.15,
+                    points: 3
                 }}
-            />
-        ))} */}
+            >
+                <defs>
+                    <linearGradient id="wave-gradient" gradientTransform="rotate(90)">
+                        <stop offset="0%"  stopColor="#8fb5efff" />
+                        <stop offset="100%" stopColor="#b1c0d8ff" />
+                    </linearGradient>
+                </defs>
+            </Wave>
+        </div>
     </div>;
 }

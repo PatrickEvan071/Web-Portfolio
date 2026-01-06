@@ -32,8 +32,17 @@ export const ThemeToggle = () => {
             "fixed max-sm:hidden top-5 right-5 z-50 p-2 rounded-full transition-colors duration-300",
             "focus:outlin-hidden"
         )}>
-            {isDarkMode ? <Sun className = "h-6 w-6 text-yellow-300"/> 
-            : <Moon className = "h-6 w-6 text-blue-900"/>}
+        {isDarkMode ? (
+            <Moon 
+                fill="white" 
+                className="h-8 w-8 text-black-900 transition-transform duration-200 hover:scale-120 cursor-pointer" 
+            />
+            ) : (
+            <Sun 
+                fill="dark gray" 
+                className="h-8 w-8 text-dark-gray transition-transform duration-200 hover:scale-120 cursor-pointer" 
+            />
+        )}
         </button>
     );
 }
