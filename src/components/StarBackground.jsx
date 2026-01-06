@@ -59,13 +59,13 @@ export const StarBackground = () => {
                 options={{
                     height: 20,
                     amplitude: 20,
-                    speed: 0.15,
+                    speed: 0.2,
                     points: 3
                 }}
             >
                 <defs>
                     <linearGradient id="wave-gradient" gradientTransform="rotate(90)">
-                        <stop offset="0%"  stopColor="#8fb5efff" />
+                        <stop offset="0%"  stopColor="#98baefff" />
                         <stop offset="100%" stopColor="#b1c0d8ff" />
                     </linearGradient>
                 </defs>
