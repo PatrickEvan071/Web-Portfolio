@@ -1,4 +1,4 @@
-import { Instagram, Disc, Github } from "lucide-react";
+import { Instagram, Disc, Github, Linkedin } from "lucide-react";
 import { cn } from "../lib/utils";
 
 export const ContactFooter = () => {
@@ -17,6 +17,11 @@ export const ContactFooter = () => {
       name: "Github",
       href: "https://github.com/PatrickEvan071",
       icon: Github
+    },
+    {
+      name: "LinkedIn",
+      href: "https://linkedin.com/in/patrick-evan-182934379",
+      icon: Linkedin
     },
   ];
 

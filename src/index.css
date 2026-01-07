@@ -127,6 +127,36 @@ html, body, * {
   box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
 }
 
+/* index.css */
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* The 'thumb' (the part that moves) */
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    /* Uses your existing window-outline color with some transparency */
+    @apply bg-window-outline/40 rounded-full transition-colors;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    /* Uses your signature blue accent on hover */
+    @apply bg-[#98baefff];
+  }
+
+  /* Firefox Support */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    /* First color is thumb, second is track */
+    scrollbar-color: theme('colors.window-outline') transparent;
+  }
+}
+
 #root{
   max-width: 100%;
   margin: 0 auto;
