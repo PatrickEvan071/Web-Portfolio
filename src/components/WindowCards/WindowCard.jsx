@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import Draggable from 'react-draggable';
-import { cn } from "../lib/utils";
+import { cn } from "../../lib/utils";
 
 export const WindowCard = ({
     title, 
@@ -8,6 +8,7 @@ export const WindowCard = ({
     className, 
     onClose, // Pass this from Home
     spawnOffset,
+    onFocus,
     isDraggable = true,
     isClosable = true, 
     style // Pass zIndex from Home
@@ -18,6 +19,7 @@ export const WindowCard = ({
     <div 
         ref={nodeRef} 
         style={style}
+        onMouseDown={onFocus}
         className={cn(
           "w-full max-w-2xl overflow-hidden rounded-xl border-3 border-window-outline bg-card shadow-2xl",
           "font-roboto",
@@ -51,10 +53,11 @@ export const WindowCard = ({
 
   return (
     <Draggable 
-        nodeRef={nodeRef} 
+        nodeRef={nodeRef}
         handle=".window-header" 
         bounds="parent"
         defaultPosition={spawnOffset || {x: 0, y: 0}}
+        onStart={onFocus}
     >
       {content}
     </Draggable>
