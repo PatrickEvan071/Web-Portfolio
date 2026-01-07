@@ -7,6 +7,7 @@ export const WindowCard = ({
     children, 
     className, 
     onClose, // Pass this from Home
+    spawnOffset,
     isDraggable = true,
     isClosable = true, 
     style // Pass zIndex from Home
@@ -53,7 +54,7 @@ export const WindowCard = ({
         nodeRef={nodeRef} 
         handle=".window-header" 
         bounds="parent"
-        defaultPosition={{x: 50, y: 50}} 
+        defaultPosition={spawnOffset || {x: 0, y: 0}}
     >
       {content}
     </Draggable>

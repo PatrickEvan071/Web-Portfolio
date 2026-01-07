@@ -73,25 +73,29 @@ export const Home = () => {
             </WindowCard>
         </main>
 
-        {openWindows.map((windowId, index) => (
-            <WindowCard 
-                key={windowId}
-                title={windowId}
-                isDraggable={true} 
-                isClosable={true}
-                onClose={() => closeWindow(windowId)}
-                className="fixed top-20 left-80" 
-                style={{ 
-                    zIndex: 100 + index, // High Z-Index to stay above Home (which is 50)
-                    marginLeft: `${index * 100}px`, // Cascading effect
-                    marginTop: `${index * 60}px` 
-                }} 
-            >
-                <div className="p-4">
-                    <p>Content for {windowId}</p>
-                </div>
-            </WindowCard>
-        ))}
+        {openWindows.map((windowId, index) => {
+    const cascadeOffset = {
+        x: index * 80, // Horizontal shift per window
+        y: index * 40  // Vertical shift per window
+    };
+
+    return (
+        <WindowCard 
+            key={windowId}
+            title={windowId}
+            isDraggable={true} 
+            isClosable={true}
+            onClose={() => closeWindow(windowId)}
+            className="fixed top-20 left-95" 
+            spawnOffset={cascadeOffset}
+            style={{ zIndex: 100 + index }} 
+        >
+            <div className="p-4">
+                <p>Content for {windowId}</p>
+            </div>
+        </WindowCard>
+    );
+})}
 
         {/* Footer */}
         <ContactFooter/>
