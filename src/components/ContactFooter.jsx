@@ -45,7 +45,7 @@ export const ContactFooter = () => {
               </span>
             </a>
 
-            {/* Divider logic: only appears between the two items */}
+            {/* Divider logic */}
             {index !== socials.length - 1 && (
               <div className="w-[1px] h-4 bg-window-outline opacity-30" />
             )}

@@ -14,14 +14,12 @@ export const MainWindowCard = () => {
         { label: "contact", icon: Mail, component: ContactsCard },
     ];
 
-    // State now stores objects: { id, x, y } for controlled dragging
     const [openWindows, setOpenWindows] = useState([]);
 
     const openWindow = (id) => {
         if (!openWindows.find(w => w.id === id)) {
             const index = openWindows.length;
             
-            // This is your pure cascading math:
             setOpenWindows((prev) => [...prev, { 
                 id, 
                 x: index * 60, // Horizontal shift
@@ -42,7 +40,6 @@ export const MainWindowCard = () => {
 
     return (
         <>
-            {/* Main "Home" Hub */}
             <main className="flex min-h-screen items-center justify-center p-4">
                 <WindowCard 
                     title="Home"
@@ -64,7 +61,7 @@ export const MainWindowCard = () => {
                                 <div 
                                     key={item.label}
                                     onClick={() => openWindow(item.label)}
-                                    className="flex flex-col items-center gap-2 grayscale hover:grayscale-0 transition-all cursor-pointer duration-200 hover:scale-120"
+                                    className="flex flex-col items-center gap-2 transition-all cursor-pointer duration-200 hover:scale-120"
                                 >
                                     <div className="w-14 h-14 border-2 border-window-outline rounded-lg flex items-center justify-center transition-colors group-hover:bg-window-outline/5">
                                         <item.icon size={24} strokeWidth={1.5} />
