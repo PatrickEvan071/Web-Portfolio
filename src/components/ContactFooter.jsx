@@ -40,14 +40,14 @@ export const ContactFooter = () => {
               className="text-foreground transition-colors duration-200 flex items-center gap-2 group"
             >
               <social.icon size={20} className="group-hover:scale-110 transition-transform" />
-              <span className="text-xs font-bold uppercase tracking-widest font-roboto whitespace-nowrap">
+              <span className="hidden md:block text-[10px] lg:text-xs font-bold uppercase tracking-widest font-roboto whitespace-nowrap">
                 {social.name}
               </span>
             </a>
 
             {/* Divider logic */}
             {index !== socials.length - 1 && (
-              <div className="w-[1px] h-4 bg-window-outline opacity-30" />
+              <div className="hidden md:block w-[1px] h-4 bg-window-outline opacity-30" />
             )}
           </div>
         ))}
