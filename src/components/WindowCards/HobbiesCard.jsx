@@ -19,7 +19,7 @@ export const HobbiesCard = (props) => {
 
   return (
     <WindowCard {...props}>
-      <div className="h-[500px] overflow-y-auto pr-2 custom-scrollbar space-y-6">
+      <div className="h-full max-h-[70vh] md:max-h-[500px] overflow-y-auto pr-2 custom-scrollbar space-y-6">
         
         <div className="sticky top-0 bg-card z-10 flex items-center gap-3 border-b-2 border-window-outline pb-4 mb-4 pt-2">
           <Coffee className="text-[#98baefff]" size={24} />
@@ -30,7 +30,7 @@ export const HobbiesCard = (props) => {
           {hobbies.map((hobby) => (
             <div 
               key={hobby.title} 
-              className="group flex flex-col p-5 rounded-lg border-2 border-window-outline bg-window-outline/5 hover:bg-window-outline/10 transition-all duration-300"
+              className="group flex flex-col p-5 rounded-lg border-2 border-window-outline transition-all duration-300"
             >
               <div className="flex justify-between items-start mb-3">
                 <h3 className="text-lg font-bold text-[#98baefff]">

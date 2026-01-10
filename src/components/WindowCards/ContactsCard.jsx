@@ -14,7 +14,7 @@ export const ContactsCard = (props) => {
 
   return (
     <WindowCard {...props}>
-      <div className="flex flex-col items-center justify-center h-full min-h-[300px] space-y-8">
+      <div className="flex flex-col items-center justify-center h-full max-h-[70vh] md:max-h-[500px] space-y-8">
         
         {/* Header Section */}
         <div className="text-center space-y-2">

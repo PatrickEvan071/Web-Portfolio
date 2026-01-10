@@ -4,7 +4,7 @@ import { WindowCard } from "./WindowCard";
 export const AboutCard = (props) => {
   return (
     <WindowCard {...props}>
-      <div className="h-max overflow-y-auto pr-4 custom-scrollbar">
+      <div className="h-full max-h-[70vh] md:max-h-[500px] overflow-y-auto pr-4 custom-scrollbar">
         
         {/* Header Section */}
         <div className="flex flex-col md:flex-row items-center gap-8 pb-8 border-b-2 border-window-outline/30">

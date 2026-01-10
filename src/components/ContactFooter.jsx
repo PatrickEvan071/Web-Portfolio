@@ -28,7 +28,7 @@ export const ContactFooter = () => {
   return (
     <footer className="fixed bottom-0 left-0 w-full p-6 z-40 flex justify-center items-center pointer-events-none">
       <div className={cn(
-        "flex items-center gap-4 px-6 py-3 rounded-full border-2 border-window-outline bg-card/80 backdrop-blur-sm shadow-xl",
+        "flex items-center gap-2 md:gap-4 px-4 py-2 md:px-6 md:py-3 rounded-full border-2 border-window-outline bg-card/80 backdrop-blur-sm shadow-xl",
         "pointer-events-auto transition-all duration-300 hover:scale-105"
       )}>
         {socials.map((social, index) => (

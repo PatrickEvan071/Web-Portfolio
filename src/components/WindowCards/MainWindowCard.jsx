@@ -81,16 +81,29 @@ export const MainWindowCard = () => {
 
                 const SpecificCard = navData.component;
 
+                const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
                 return (
                     <SpecificCard 
                         key={win.id}
                         title={win.id}
-                        isDraggable={true} 
+                        isDraggable={!isMobile} 
                         isClosable={true}
                         onClose={() => closeWindow(win.id)}
-                        className="fixed top-20 left-95" 
+                        
+                        className="fixed" 
+                        
+                        style={{ 
+                            zIndex: 100 + index,
+                            top: isMobile ? '50%' : `${100 + win.y}px`,
+                            left: isMobile ? '50%' : `${150 + win.x}px`,
+                            
+                            transform: isMobile ? 'translate(-50%, -50%)' : 'none',
+                            
+                            maxWidth: isMobile ? '90vw' : 'auto',
+                            width: isMobile ? '90vw' : '600px' 
+                        }} 
                         spawnOffset={{ x: win.x, y: win.y }}
-                        style={{ zIndex: 100 + index }} 
                     />
                 );
             })}

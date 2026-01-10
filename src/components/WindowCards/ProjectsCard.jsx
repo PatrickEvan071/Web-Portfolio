@@ -20,7 +20,7 @@ export const ProjectsCard = (props) => {
 
   return (
     <WindowCard {...props}>
-      <div className="h-[500px] overflow-y-auto pr-2 custom-scrollbar space-y-6">
+      <div className="h-full max-h-[70vh] md:max-h-[500px] overflow-y-auto pr-2 custom-scrollbar space-y-6">
         
         {/* Section Header */}
         <div className="sticky top-0 bg-card z-10 flex items-center gap-3 border-b-2 border-window-outline pb-4 mb-4">
