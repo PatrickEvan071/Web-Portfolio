@@ -14,7 +14,7 @@ export const ProjectsCard = (props) => {
       description: "A flappy bird clone with a focus on functional programming principles. Using RxJS to manage the game loop as events, and utilizing observables to handle physics, user input, and collisions seamlessly. Overall, this project has greatly helped improve my understanding of functional programming and why it is used.",
       tech: ["RxJS", "HTML"],
       image: "/flappybirb.png",
-      link: "https://flappybird-rxjs.vercel.app"
+      link: "https://flappybirb.vercel.app/"
     },
   ];
 
