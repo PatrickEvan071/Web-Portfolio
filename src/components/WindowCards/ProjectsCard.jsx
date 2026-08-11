@@ -10,6 +10,13 @@ export const ProjectsCard = (props) => {
       image: "/home_page_pic.png",
     },
     {
+      title: "SplitWave",
+      description: "A desktop application powered by Meta's Demucs AI, designed to isolate audio files into distinct stems like vocals, drums, bass, and more. It features a real-time multitrack waveform viewer, custom gain staging, and the ability to export mixdowns entirely offline. What motivated me to create this was the fact that existing stem separation tools like Moises and LALAL.ai required a subscription to fully function. Furthermore, as a musician myself, having access to tools like this has been a massive quality-of-life improvement for my own musical workflow.",
+      tech: ["Tauri", "React", "Python", "Tailwind CSS"],
+      image: "/SplitWave.png",
+      link: "https://github.com/PatrickEvan071/SplitWave"
+    },
+    {
       title: "Flappy Birb",
       description: "A flappy bird clone with a focus on functional programming principles. Using RxJS to manage the game loop as events, and utilizing observables to handle physics, user input, and collisions seamlessly. Overall, this project has greatly helped improve my understanding of functional programming and why it is used.",
       tech: ["RxJS", "HTML"],
