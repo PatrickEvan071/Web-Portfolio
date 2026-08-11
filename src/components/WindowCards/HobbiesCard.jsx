@@ -5,7 +5,7 @@ export const HobbiesCard = (props) => {
   const hobbies = [
     {
       title: "Music",
-      description: "Music has been a major part of my life for a long time but I only started taking it seriously about 3 years ago when I picked up the bass guitar. While I am still on the learning curve, I love the grind of getting better. It’s easily my favorite way to cool off after some work.",
+      description: "Music has been a major part of my life for a long time but I only started taking it seriously since about 2022 when I picked up the bass guitar. While I am still on the learning curve, I love the grind of getting better. It’s easily my favorite way to cool off after some work.",
       tags: ["Music", "Bass", "Band"],
       image: "/bass_pic.jpg",
     },

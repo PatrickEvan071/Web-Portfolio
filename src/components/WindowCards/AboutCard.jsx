@@ -29,7 +29,7 @@ export const AboutCard = (props) => {
 
         <div className="py-8 space-y-6">
           <p className="text-lg leading-relaxed text-foreground/80 font-roboto">
-            Hi! I'm Patrick, a developer who enjoys building interactive web pages.
+            Hi! I'm Patrick, a developer who enjoys building stuff :D.
           </p>
 
           <ul className="space-y-4">
@@ -39,7 +39,7 @@ export const AboutCard = (props) => {
                 <div className="h-2 w-2 rounded-full bg-[#98baefff] shadow-[0_0_8px_#98baefff/40]" />
               </div>
               <p className="text-muted-foreground leading-relaxed pl-2">
-                Currently a <span className="font-medium text-[#98baefff]">Year 2 Semester 2</span> Computer Science student at Monash University.
+                Currently a <span className="font-medium text-[#98baefff]">Year 3 Semester 1</span> Computer Science student at Monash University.
               </p>
             </li>
 
@@ -49,7 +49,7 @@ export const AboutCard = (props) => {
                 <div className="h-2 w-2 rounded-full bg-[#98baefff] shadow-[0_0_8px_#98baefff/40]" />
               </div>
               <p className="text-muted-foreground leading-relaxed pl-2">
-                Proficient in <span className="text-[#98baefff] font-medium">English and Indonesian</span> <span className="text-[9px]">and maybe some conversational Hokkien</span>.
+                Proficient in <span className="text-[#98baefff] font-medium">English, Indonesian and Hokkien</span>
               </p>
             </li>
 
@@ -59,7 +59,7 @@ export const AboutCard = (props) => {
                 <div className="h-2 w-2 rounded-full bg-[#98baefff] shadow-[0_0_8px_#98baefff/40]" />
               </div>
               <p className="text-muted-foreground leading-relaxed pl-2">
-                Always <span className="text-[#98baefff] font-medium">learning and experimenting</span> with new web development technologies.
+                Always <span className="text-[#98baefff] font-medium">learning and experimenting</span> with new technologies.
               </p>
             </li>
           </ul>
